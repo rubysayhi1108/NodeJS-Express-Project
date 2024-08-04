@@ -1,0 +1,81 @@
+{
+  "orders": [
+    {
+      "id": 17,
+      "hoTen": "hongngoc",
+      "soDienThoai": 29331213,
+      "email": "ngoc@gmail.com",
+      "diaChiCuThe": "54/15",
+      "phuongXa": "duc my",
+      "quanHuyen": "cang long",
+      "tinhThanhPho": "tra vinh",
+      "shipping": 1,
+      "pttt": 1,
+      "stt": "Chờ xác nhận",
+      "tong": 63000000,
+      "orderDate": "2024-04-11T05:47:06.000Z"
+    },
+    {
+      "id": 18,
+      "hoTen": "hongngoc",
+      "soDienThoai": 939173312,
+      "email": "ngoc@gmail.com",
+      "diaChiCuThe": "54/15",
+      "phuongXa": "duc my",
+      "quanHuyen": "cang long",
+      "tinhThanhPho": "tra vinh",
+      "shipping": 1,
+      "pttt": 1,
+      "stt": "Chờ xác nhận",
+      "tong": 54500000,
+      "orderDate": "2024-04-11T05:55:51.000Z"
+    }
+  ],
+  "order_products": [
+    {
+      "id": 38,
+      "orderId": 17,
+      "name": "Logines-09",
+      "image": "http://localhost:5000/imageAdd-1712648232920.webp",
+      "price": 23000000,
+      "quantity": 1,
+      "thanhTien": 23000000
+    },
+    {
+      "id": 39,
+      "orderId": 17,
+      "name": "Logines-07",
+      "image": "http://localhost:5000/imageAdd-1712648082765.webp",
+      "price": 40000000,
+      "quantity": 1,
+      "thanhTien": 40000000
+    },
+    {
+      "id": 40,
+      "orderId": 17,
+      "name": "Logines-05",
+      "image": "http://localhost:5000/imageAdd-1712647980695.webp",
+      "price": 31500000,
+      "quantity": 1,
+      "thanhTien": 31500000
+    },
+    {
+      "id": 41,
+      "orderId": 17,
+      "name": "Logines-09",
+      "image": "http://localhost:5000/imageAdd-1712648232920.webp",
+      "price": 23000000,
+      "quantity": 1,
+      "thanhTien": 23000000
+    },
+    {
+      "id": 42,
+      "orderId": 18,
+      "name": "Logines-04",
+      "image": "http://localhost:5000/imageAdd-1712647892493.webp",
+      "price": 32000000,
+      "quantity": 1,
+      "thanhTien": 32000000
+    }
+  ]
+}

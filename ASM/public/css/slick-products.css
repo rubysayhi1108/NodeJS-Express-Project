@@ -1,0 +1,45 @@
+.container__slick--product {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: nowrap !important;
+    overflow: hidden !important;
+    
+}
+.container__slick--product .slick-track {
+    width: auto !important;
+    display: flex;
+    gap: 21px !important;
+    padding-bottom: 15px;
+}
+.container__slick--product .slick-slide {
+    max-width: calc(100%/5) !important;
+}
+.container__slick--product .product-name {
+    display: flex;
+    width: 100%;
+}
+.container__slick--product .slick-dots {
+    width: 100%;
+    position: absolute;
+    z-index: 10;
+    bottom: 0 !important;
+}
+
+/* chổ này cho thằng bán chạy */
+.slickProducts_3items {
+    width: 880px;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow: hidden !important;
+}
+/* .slickProducts_3items .product {
+    width: calc(100%/3);
+} */
+.slickProducts_3items .slick-track {
+    display: flex;
+    gap: 21px;
+}
+.slick-slider{
+    display: flex !important;
+}

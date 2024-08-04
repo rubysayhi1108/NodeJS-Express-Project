@@ -1,0 +1,28 @@
+<%-include('header.ejs')%>
+<title>Login</title>
+<link rel="shortcut icon" href="/img/logo/favicon.svg" type="image/x-icon">
+<link rel="stylesheet" href="/css/login.css">
+<link rel="stylesheet" href="/css/box-cart.css">
+    <main>
+        <%-include('box-cart.ejs')%>
+        <div class="conatiner-register">
+            <div class="box right">
+                <form action="/postLogin" method="post" id="formLogin">
+                    <h1>ĐĂNG NHẬP</h1>
+                    <div class="box-input"><input id="email" name="emailAccount" type="email" placeholder="Email"><i class="fa-regular fa-envelope"></i></div>
+                    <p class="error-message" id="error-message-email"></p>
+                    <div  class="box-input"><input id="pass" name="passwordAccount" type="password" placeholder="Mật khẩu"><i class="fa-solid fa-lock"></i></div>
+                    <p class="error-message"  id="error-message-pass"></p>
+                    <button type="submit" id="login" class="btn-login">Đăng nhập</button>
+                   <a href="/register"><h4 style="color: black;font-weight: 500; text-align: center;">Bạn chưa có tài khoản?</h4></a>
+                </form>
+            </div>
+            <div class="box-left">
+            </div>
+        </div>  
+    </main>
+</body>
+<script src="/js/login-register.js"></script>
+<!-- <script src="/js/checkform.js"></script> -->
+<script src="/js/addcart.js"></script>
+</html>

@@ -1,0 +1,175 @@
+<%-include('header.ejs')%>
+<title>Detail Product</title>
+<link rel="stylesheet" href="/css/product-detail.css">
+<link rel="stylesheet" href="/css/product.css">
+<link rel="stylesheet" href="/css/box-cart.css">
+<div class="title-page">
+    <a href=""><%= titlePage %></a>
+</div>
+   <main>
+    <%-include('box-cart.ejs')%>
+        <section id="detail-product" class="container-product-detail">
+            <% const priceSale = product.price * (1 - product.sale / 100); %>
+            <div class="img-product">
+                <img class="img-main" src="/<%= product.image %>" alt="">
+                
+            </div>
+            <div class="detail-product">
+                <h1 class="name-product"><%= product.name %></h1>
+                <div class="box-price">
+                    <h1 class="price"><%= priceSale.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' }) %></h1>
+                    <% if (product.sale > 0) { %>
+                        <div class="box-sale">
+                            <h1 class="sale-price"><%= product.price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' }) %></h1> 
+                            <div class="tag-sale"><p><%= product.sale %>%</p></div>
+                        </div>
+                    <% } %>
+                </div>
+                <div class="box-btn-container">
+                    <div class="box-qty">
+                        <button id="minusButton" onclick="minus()" class="tru">-</button>
+                        <input id="input-qty" type="number" value="1">
+                        <button id="plusButton" onclick="plus()" class="cong">+</button>
+                    </div>
+                    <div class="box-btn-detail">
+                        <button id="themButton" class="them"><i class="fa-solid fa-cart-plus"></i></button>
+                        <button class="mua">MUA NGAY</button>
+                    </div>
+                </div>
+                <div class="box-thongso">
+                    <h2>Thông số kĩ thuật</h2>
+                    <div class="thongso">
+                        <h3>Thương Hiệu :</h3>
+                        <p>Longines</p>
+                    </div>
+                    <div class="thongso">
+                        <h3>Dòng máy :</h3>
+                        <p>Cơ/Automatic</p>
+                    </div>
+                    <div class="thongso">
+                        <h3>Đối tượng sử dụng :</h3>
+                        <p>Nam</p>
+                    </div>
+                    <div class="thongso">
+                        <h3>Chất liệu kính :</h3>
+                        <p>Kính Sapphire</p>
+                    </div>
+                    <div class="thongso">
+                        <h3>Size mặt :</h3>
+                        <p>38.5mm</p>
+                    </div>
+                    <div class="thongso">
+                        <h3>Chất liệu vỏ :</h3>
+                        <p>Vỏ thép không gỉ</p>
+                    </div>
+                    <div class="thongso">
+                        <h3>Màu vỏ :</h3>
+                        <p>Vàng</p>
+                    </div>
+                    <div class="thongso">
+                        <h3>Kháng nước :</h3>
+                        <p>3atm</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div id="motaCate" class="box-decription">
+            <h3>Mô tả</h3>
+            <p><%= mota %></p>  
+        </div>
+        <section class="container-comment">
+           <div class="box-cmt">
+                <h2 style="text-align: center;">ĐÁNH GIÁ</h2>
+                <div class="box-cmt-content">
+                    <img src="/img/avatar.png" alt="">
+                    <div class="box-content">
+                        <div class="name-edit">
+                            <h3 class="username">Username</h3>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                        <p class="content-cmt">sddddddsddsdsf</p>
+                        <div class="date-post">
+                            <p>12/1/2004</p>
+                        </div>
+                        
+                    </div>  
+                </div>
+                <div class="box-cmt-content">
+                    <img src="/img/avatar.png" alt="">
+                    <div class="box-content">
+                        <div class="name-edit">
+                            <h3 class="username">Username</h3>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                        <p class="content-cmt">sssssssssssswwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww</p>
+                        <div class="date-post">
+                            <p>12/1/2004</p>
+                        </div>
+                    </div>  
+                </div>
+                <div class="box-cmt-content">
+                    <img src="/img/avatar.png" alt="">
+                    <div class="box-content">
+                        <div class="name-edit">
+                            <h3 class="username">Username</h3>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                        <p class="content-cmt">keke</p>
+                        <div class="date-post">
+                            <p>12/1/2004</p>
+                        </div>      
+                    </div>  
+                </div>
+                <div class="input-cmt">
+                    <input type="text" name="" id=""  placeholder="Nhập nội dung">
+                    <button class="btn-cmt"><i class="fa-solid fa-paper-plane"></i></button>
+                </div>
+           </div>
+        </section>
+        <section  class="container-product">
+            <h2>SẢN PHẨM LIÊN QUAN</h2>
+            <div id="spLienquan" class="container">
+                <% relatedProduct.forEach(function(e) { %>
+                    <% const priceSale = e.price * (1 - e.sale / 100); %>
+                        <a href="/product-detail/<%= e.id %>">
+                            <div class="product">
+                                <await deleteDataProduct(id);
+                                res.status(200).json({ title: "Thành công!", message: "Xóa sản phẩm thành công!" });div class="product-img">
+                                    <img src="/<%= e.image %>" alt="">
+                                </div>
+                                <div class="product-name">
+                                    <p><%= e.name %></p>
+                                </div>
+                                <div class="product-price">
+                                    <div class="price">
+                                        <span><%= e.price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' }) %></span>
+                                    </div>
+                                    <div class="price-sale">
+                                        <span><%= priceSale.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' }) %></span>
+                                    </div>
+                                    
+                                </div>
+                                <div class="product-view-love">
+                                    <div class="view">
+                                        <i class="fa-regular fa-eye"></i><p><%= e.view %></p>
+                                    </div>
+                                </div>
+                                <% if (e.sale > 0) { %>
+                                    <div class="sale-tag"><%= e.sale %>%</div>
+                                <% } %>
+                                <div class="product-btn">
+                                    <button class="btn-buy">MUA NGAY</button>
+                                    <button class="btn-add"><i class="fa-solid fa-cart-plus"></i></button>
+                                </div>
+                            </div>
+                        </a>
+                <% }); %>
+            </div>
+        </section>
+   </main>
+   <%-include('footer.ejs')%>
+</body>
+<script src="/js/addcart.js"></script>
+<script src="/js/product-detail.js"></script>
+<script src="/js/menu.js"></script>
+</html>

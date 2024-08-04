@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=Andada+Pro&family=Lora&family=Rokkitt&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    outline: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-family: 'Rokkitt', serif;
+}
+header{
+    display: flex;
+    position: fixed;
+    top: 0;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    align-items: center;
+    padding: 10PX;
+    justify-content: space-around;
+    border-bottom: 0.5px solid #ddd;
+    z-index: 1;
+}
+header .menu ul{
+    display: flex;
+    list-style: none;
+}
+header .menu ul li a{
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    /* color: #FFCC00; */
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+header .menu ul li a:hover {
+    color: #FFCC00;
+    border-bottom: 2px solid #FFCC00;
+}
+
+/* menu-dropdown */
+header .menu ul .dropdown {
+    position: relative;
+}
+header .menu ul .dropdown:hover .dropdown-menu {
+    display: block;
+}
+header .menu ul .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+header .menu ul .dropdown-menu li {
+    display: block;
+    border-bottom: 0.2px solid #ddd;
+    width: 200px;
+    height: 40px;
+    padding: 6px;
+}
+header .menu ul .dropdown-menu li:hover{
+    background-color: rgb(0, 0, 0);
+    transition: background-color 0.2s ease-in-out;
+    color: #FFCC00;
+}
+header .menu ul  .dropdown-menu li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 20px;
+}
+header .menu ul .dropdown-menu li a:hover{
+    color: #FFCC00;
+    border-bottom: none ;
+}
+/* menu-dropdown */
+header .logo-header img{
+    width: 80px;
+}
+header .menu-icon{
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+}
+header .menu-icon li a{
+    /* color: #FFCC00; */
+    color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+}
+header .menu-icon li a .qty-cart{
+    background-color:#ED1C24;
+    width:15px;
+    height: 15px;
+    color: #ffffff;
+    border-radius: 50%;
+    text-align: center;
+    position: relative;
+    bottom: 10px;
+    line-height: 15px;
+}
+header .menu-icon li a:hover{
+    color: #FFCC00;
+}
+
+
+.title-page{
+    display: flex;
+    gap: 5px;
+    padding: 10px;
+    margin-top: 120px;
+    margin-left:130px ;
+}
+.title-page a{
+    color: #000000;
+}
+.title-page a:hover{
+    color: #FFCC00;
+}
+footer{
+    margin-top: 50px;
+    background-color: #000000;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+}
+.about-page {
+    width: 33%;
+}
+.about-page img{
+    width: 200px;
+    height: 200px;
+}
+.about-page .content h4{
+    color:#ffffff ;
+    word-wrap: break-word;
+    font-weight: 500;
+}
+.footer-content{
+    display: flex;
+    gap: 30px;
+}
+.policy{
+    color: #ffffff;
+}
+.policy p{
+    margin-top: 10px;
+}
+.follow a{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ffffff;
+    margin-top: 10px;
+}
+
+
+main{
+    width: 100%;
+    margin-top: 20px ;
+    padding: 0px 180px;
+}
+.container-cart{
+    display: flex;
+    gap: 50px;
+}
+.container-product-cart{
+    width: 70%;
+    margin-top: 30px;
+    overflow-y: scroll;
+    max-height: 400px;
+}
+
+thead tr {
+    display: flex;
+    gap: 90px;
+    align-items: center;
+    margin: 20px 0px;
+
+}
+thead tr td{
+    text-align: center;
+}
+tbody tr{
+    margin-bottom: 20px ;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+tbody tr td{
+    max-width: 100px;
+    word-wrap: break-word;  
+}
+td img{
+    width: 100px;
+    height: 100px;
+}
+tbody tr td i{
+    color: #ED1C24;
+    padding: 20px;
+}
+.qty{
+    display: flex;
+    gap: 5px;
+    border: 0.5px solid #ddd;
+    /* width: 175px; */
+}
+.qty button{
+    width: 30px;
+    height: 30px;
+    outline: none;
+    border: none;
+    color: #000000;
+    font-size: 20px;
+    align-items: center;
+}
+.qty button:hover{
+    background-color: #000000;
+    color: #FFCC00;
+    border: 0.5px solid #ddd;
+}
+.qty input{
+    width: 30px;
+    text-align: center;
+    border:none;
+    /* border: 0.3px solid #ddd; */
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Rokkitt', serif;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.container-tong{
+    width: 30%;
+}
+.box-tongtien{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    display: grid;
+    gap: 10px;
+    margin-top: 30px;
+}
+.box-tongtien p{
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    /* background-color: #000000;
+    color: #FFCC00; */
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+
+}
+/* .box-tongtien .thanhtien h3{
+    font-weight: 500;
+} */
+.box-tongtien h4{
+    font-weight: 500;
+}
+.box-tongtien .thanhtien{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+.box-tongtien .thanhtien h5{
+    font-weight: 500;
+
+}
+.box-tongtien .thanhtien h2,h3{
+    font-weight: 600;
+}
+ .box-voucher{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.box-voucher input{
+    padding: 10px;
+    border: 0.3px solid #ddd;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Rokkitt', serif;
+    width: 75%;
+    border-radius: 3px;
+}
+.box-voucher button{
+    padding: 10px;
+    border: none;
+    color: #000000;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Rokkitt', serif;
+    border-radius: 3px;
+    width: 20%;
+    border: 0.5px solid #ddd;
+}
+.box-voucher button:hover{
+    background-color:#000000;
+    color:  #FFCC00 ;
+}
+.box-tongtien .btn-thanhtoan{
+    outline: none;
+    border: 0.3px solid #ddd;
+    font-size: 20px;
+    font-family: 'Rokkitt', serif;
+    width: 100%;
+    height: 40px;
+}
+.box-tongtien .btn-thanhtoan:hover{
+    color: #FFCC00;
+    background-color: #000000;
+}
+.box-tongtien .total{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}

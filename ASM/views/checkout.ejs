@@ -1,0 +1,94 @@
+<title>Checkout</title>
+    <link rel="shortcut icon" href="/img/logo/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="/css/checkout.css">
+<body>
+    <main>
+        <h2>THANH TOÁN</h2>
+        <!-- <div class="title-login">
+            <h3 style="font-weight: 500;">Bạn đã có tài khoản?</h3>
+            <a href=""><h3>Đăng nhập</h3></a>
+        </div> -->
+        <div class="container-checkout">  
+            <form action="/postCheckout" method="post" id="formCheckOut" class="container-checkout">
+                <div class="box-left">
+                    <div class="address">
+                        <h3>Thông tin đặt hàng</h3>
+                        <p style="color: red;" id="address-error"></p>
+                        <input type="text" id="hoTen" name="hoTen" placeholder="Họ và tên">
+                        <div class="sdt-email">
+                            <input type="number" id="soDienThoai" name="soDienThoai" placeholder="Số điện thoại" >
+                            <input type="text" id="email"  name="email" placeholder="Email">
+                        </div>
+                        <input type="text" id="diaChiCuThe" name="diaChiCuThe" placeholder="Địa chỉ cụ thể">
+                        <div class="tinh-huyen-xa">
+                            <input type="text" id="phuongXa" name="phuongXa" placeholder="Phường/Xã">
+                            <input type="text" id="quanHuyen" name="quanHuyen" placeholder="Quận/Huyện">
+                            <input type="text" id="tinhThanhPho" name="tinhThanhPho" placeholder="Tỉnh/TP">
+                        </div>
+                    </div>
+                    <div class="shipping">
+                        <h3>Phí vận chuyển</h3>
+                        <!-- <div class="box-ship">
+                            <input type="radio" checked>
+                            <h3>Ship COD</h3>
+                            <h3 id="shipping-cost"></h3>
+                        </div> -->
+                        <div class="box-ship">
+                            <input checked value="1" name="shipping" id="shipping" type="radio"  >
+                            <h3>Miễn phí</h3>
+                            <h3>0đ</h3>
+                        </div>
+                    </div>
+                    <div class="ptthantoan">
+                        <h3>Phương thức thanh toán</h3>
+                        <p style="color: red;" id="payment-error"></p>
+                        <div class="box-tt">
+                            <input checked type="radio" value="1" name="thanhToan" id="thanhToan" >
+                            <h3>Thanh toán khi nhận hàng</h3>
+                            <i class="fa-solid fa-money-bill"></i>
+                        </div>
+                    </div> 
+                </div>
+                <div class="box-right"> 
+
+                        <div class="list-sp" id="container-product-cart">
+                        </div>
+                        <div class="list-tong">
+                            <div id="total" class="box-tong">     
+                            </div>
+                            <div id="shipping" class="box-tong">
+                            </div>
+                            <div id="totalAll" class="box-tong ">
+                            </div>
+                        </div>
+                
+                        <div class="complete">
+                            <a href="../layout/cart.html">
+                                <i class="fa-solid fa-arrow-right"></i>
+                                <h4>Quay lại giỏ hàng</h4>
+                            </a>
+                            <button id="btnOrder" type="submit" class="btn-thanhtoan">ĐẶT HÀNG</button>
+                        </div>
+                        <h4 style="color: red;" id="errCheckout"></h4>
+                
+                </div>
+             </form>
+        </div>
+
+    </main>
+    <div id="confirmation-popup" class="confirmation-popup">
+        <div class="overlay" id="overlay"></div>
+        <div class="popup-content">
+            <h2>Đặt hàng thành công!</h2>
+            <i class="fa-regular fa-circle-check"></i>
+            <p>Cảm ơn bạn đã mua sắm với chúng tôi.</p>
+            <p>Chúng tôi sẽ liên hệ với bạn sớm nhất có thể.</p>
+            <div class="button-flex">
+                <a href="/home"><button id="closePopupButton" class="btn-ok">OK</button></a>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/js/check-out.js"></script>
+
+</html>

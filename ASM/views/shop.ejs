@@ -1,0 +1,124 @@
+<%-include('header.ejs')%>
+<title>Shop</title>
+<link rel="shortcut icon" href="/img/logo/favicon.svg" type="image/x-icon">
+<link rel="stylesheet" href="/css/shop.css">
+<link rel="stylesheet" href="/css/product.css">
+<link rel="stylesheet" href="/css/box-cart.css">
+    <div class="title-page">
+        <a href=""><%= titlePage %></a>
+    </div>
+    <main>
+        <section class="container-banner-child">
+            <a href=""><img src="/img/banner/banner-mini1.webp" alt=""></a>
+            <a href=""><img src="/img/banner/banner-mini2.webp" alt=""></a>
+        </section>
+        <div class="box-filter">
+            <div class="menu-filter-left">
+                <ul class="filter-content">
+                    <li>
+                        <a href="">
+                            <i class="fa-solid fa-filter"></i>
+                            <p>Bộ lọc</p>
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a href=""> 
+                            <p>Thương hiệu</p>
+                            <i class="fa-solid fa-angle-down"></i>
+                        </a>
+                        <ul id="cateFilter" class="dropdown-menu">
+                            <% category.forEach(function(e) { %>
+                                <li>
+                                    <a href="/shop/<%=e.id%>"><img src="/img/brand/<%=e.image%>" alt=""></a>
+                                </li>
+                            <%})%>
+                            
+                        </ul>
+                    </li>
+                    <li class="dropdown">    
+                        <a href="">
+                            <p>Giá</p>
+                            <i class="fa-solid fa-angle-down"></i>
+                        </a>
+                        <ul style="flex-wrap: nowrap; width: 620px; " class="dropdown-menu">
+                            <li><a href="#"> > 3 triệu </3tri></a></li>
+                            <li><a href="#">3-6 triệu </a></li>
+                            <li><a href="#">6-12 triệu</a></li>
+                            <li><a href="#">12-35 triệu</a></li>
+                            <li><a href="#">25-100 triệu</a></li>
+                            <li><a href="#"> < 100 triệu</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <%-include('box-cart.ejs')%>
+        
+        <section class="container-product ">
+            <h2 id="title"><%= title %></h2>
+                <div style="gap: 38px;" class="container container-shop">
+                    <% product.forEach(function(e) { %>
+                        <% const priceSale = e.price * (1 - e.sale / 100); %>
+                            <a href="/product-detail/<%= e.id %>">
+                                <div class="product">
+                                    <div class="product-img">
+                                        <img style="width: 250px;" src="/<%= e.image %>" alt="">
+                                    </div>
+                                    <div class="product-name">
+                                        <p><%= e.name %></p>
+                                    </div>
+                                    <div class="product-price">
+                                        <% if (e.sale > 0) { %>
+                                            <div class="price">
+                                                <span><%= priceSale.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' }) %></span>
+                                            </div>
+                                            <div class="price-sale">
+                                                <span><%= e.price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' }) %></span>
+                                            </div>
+                                        <%} else if(e.sale === 0) { %>
+                                            <div class="price">
+                                                <span><%= e.price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' }) %></span>
+                                            </div>
+                                        <% } %>
+                                    </div> 
+                                    <div class="product-view-love">
+                                        <div class="view">
+                                            <i class="fa-regular fa-eye"></i><p><%= e.view %></p>
+                                        </div>
+                                    </div>
+                                    <% if (e.sale > 0) { %>
+                                        <div class="sale-tag"><%= e.sale %>%</div>
+                                    <% } %>
+                                    <div class="product-btn">
+                                        <button class="btn-buy">MUA NGAY</button>
+                                        <button class="btn-add"><i class="fa-solid fa-cart-plus"></i></button>
+                                    </div>
+                                </div>
+                            </a>
+                    <% }); %>
+                </div>
+            
+            <div id="categoryShop" class="container container-shop">
+                <p id="thongbao"></p>
+            </div>
+            <div class="ptrang">
+                <div class="pagination" style="display: flex;">
+                    <div class="prev"><i class="fa-solid fa-chevron-left"></i></div>
+                    <div class="pagination-dots">
+                        <div class="dot">1</div>
+                        <div class="dot">2</div>
+                        <div class="dot">3</div>
+                        <div class="more-dots">...</div>
+                        <div class="dot">10</div>
+                    </div>
+                    <div class="next"><i class="fa-solid fa-chevron-right"></i></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <%-include('footer.ejs')%>
+</body>
+<script src="/js/addcart.js"></script>
+<script src="/js/menu.js"></script>
+<script src="/js/shop.js"></script>
+</html>

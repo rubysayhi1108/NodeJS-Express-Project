@@ -1,0 +1,41 @@
+<%-include('header.ejs')%>
+<title>Cart</title>
+<link rel="shortcut icon" href="/img/logo/favicon.svg" type="image/x-icon">
+<link rel="stylesheet" href="/css/cart.css">
+<link rel="stylesheet" href="/css/box-cart.css">
+        <div class="title-page">
+            <a href="">Trang chủ</a> <p>|</p> <a href="">Trang cửa hàng</a>
+        </div>
+        <main>
+            <%-include('box-cart.ejs')%>
+            <h1>GIỎ HÀNG</h1>
+            <div class="container-cart">
+                <div class="container-product-cart">
+                    
+                </div>
+                <div class="container-tong">
+                    <div class="box-tongtien">
+                        <p>TỔNG</p>
+                        <div class="thanhtien">         
+                            
+                        </div>
+                        <div class="box-voucher">
+                            <input type="text" placeholder="Nhập mã giảm giá">
+                            <button class="btn-voucher"><i class="fa-solid fa-ticket"></i></button>
+                        </div>
+                        <!-- <div class="thanhtien">
+                            <h4>Khuyến mãi :</h4>
+                            <h4>10000000đ</h4>
+                        </div> -->
+                        <div class="total">
+                            
+                        </div>
+                        <h4>Đơn hàng trên 3.000.000đ sẽ được miễn phí vận chuyển</h4>
+                        <a href="/checkout"><button class="btn-thanhtoan">THANH TOÁN</button></a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+    <script src="/js/cart.js"></script>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DASBOARD</title>
+    <link rel="shortcut icon" href="/image/logo/favicon.svg" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/css/order-ad.css">
+    <link rel="stylesheet" href="/css/order.css">
+</head>
+<body>
+    <main>
+        <div class="main-container">
+            <%-include('menu-admin.ejs')%>
+            <div class="right-container">
+                <div class="content-top">
+                    <h3>WelcomeBack, Admin <i style="font-size: 25px;" class="fa-solid fa-hand-peace"></i></h3>
+                    <div class="content-top-right">
+                        <!-- <div class="box-search">
+                            <i  class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" placeholder="Search...">
+                        </div> -->
+                        <div class="box-admin">
+                           <div class="box-item">
+                                <i class="fa-solid fa-bell"></i>
+                                <div class="red-number">
+                                    <p>0</p>
+                                </div>
+                           </div>
+                           <div class="box-item">
+                                <i class="fa-solid fa-comment-dots"></i>
+                                <div class="red-number">
+                                    <p>0</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-acc-admin">
+                            <img src="../image/avatar.png" alt="">
+                            
+                            <p>User name</p>
+                            <i class="fa-solid fa-caret-down"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="title-date">
+                    <div class="title">
+                        <p>Admin</p>/<h3>Orders</h3>
+                    </div>
+                    <div class="box-date">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <p>25/01/2024</p>
+                        <p>-</p>
+                        <p>1/02/2024</p>
+                    </div>
+                </div>
+                <div class="main-content">
+                   <div class="container-Allpro">
+                        <div class="content-top-product">
+                            <div id="coutOrder" class="box-content">
+                               
+                            </div>
+                            <div class="box-search">
+                                <i  class="fa-solid fa-magnifying-glass"></i>
+                                <input type="text" placeholder="Search...">
+                            </div>
+                        </div>
+                        <div class="container-orders">
+                            <div class="box-order">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>OrderID</th>
+                                            <th>Date</th>
+                                            <th>Customer name</th>
+                                            <th>Status</th>
+                                            <th>Totall</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="containerOrder">
+                                        <% order.forEach(orderItem => { %>
+                                            <% const orderDate = new Date(orderItem.orderDate); %>
+                                            
+                                            <% const day = orderDate.getDate().toString().padStart(2, '0'); %>
+                                            <% const month = (orderDate.getMonth() + 1).toString().padStart(2, '0'); %>
+                                            <% const year = orderDate.getFullYear().toString(); %>
+                                        
+                                            
+
+                                            <tr>
+                                                <td idOrder="<%= orderItem.id %>"><%= orderItem.id %></td>
+                                                <td> <%= day %>/<%= month %>/<%= year %></td>
+                                                <td><%= orderItem.hoTen %></td>
+                                                <td><%= orderItem.stt %></td>
+                                                <td><%= orderItem.tong.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' }) %></td>
+                                                <td id="orderDt"><a href="/order-detail/<%= orderItem.id %>"><p>Xem chi tiết >></p></a></td>
+                                            </tr>
+                                        <% }); %>
+                                    </tbody>
+                                </table>
+                                
+                            </div>
+                        </div>
+                   </div>
+                </div>
+                <!-- <div class="footer-admin">
+                    <div class="title-footer">
+                        <i class="fa-solid fa-copyright"></i>
+                        <h4>RUBY-WATCH admin</h4>
+                    </div>
+                </div> -->
+            </div>
+            
+        </div>
+       
+    </main>
+</body>
+<script src="/js/main-admin.js"></script>
+<script src="/js/order.js"></script>
+</html>

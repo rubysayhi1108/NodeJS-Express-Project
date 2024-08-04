@@ -1,0 +1,268 @@
+*{
+    padding: 0;
+    margin: 0;
+    outline: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    font-family: 'Quicksand', sans-serif;
+}
+main{
+    width: 100%;
+    /* padding: 0px 50px; */
+}
+.main-container{
+    display: flex;
+}
+.left-container {
+    width: 20%;
+    min-height: 100vh;
+    position: relative;
+    /* background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)); */
+    background-color: black;
+}
+.logo-web{
+    display: flex;
+    justify-content: center;
+    padding: 10px 0px;
+}
+.left-container .list-menu ul li{
+    list-style: none;
+}
+.left-container .list-menu ul li a{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 16px;
+    /* color: #FFCC00; */
+    color: white;
+    padding: 15px 30px;
+}
+.left-container .list-menu ul li a:hover{
+    background-color: rgb(214, 214, 214);
+    transition: background-color 0.2s ease-in-out;
+    color:  rgb(0, 0, 0);
+}
+.list-menu li a.active {
+    background-color: #FFCC00;
+    color: rgb(0, 0, 0);
+}
+
+
+.left-container .list-menu ul li a i{
+    font-size: 22px;
+}
+.right-container {
+    width: 100%;
+}
+.right-container .content-top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    box-shadow: 0px 0px 8px gray;
+}
+.content-top-right{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    color: rgb(63, 63, 63);
+}
+.box-search{
+    display: flex;
+    align-items: center;
+    padding:7px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    gap: 10px;
+}
+.content-top-right .box-search input{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    border: none;
+    outline: none;
+}
+.box-admin{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.box-admin .box-item{
+    position: relative;
+
+}
+.box-admin .box-item i{
+    font-size: 20px;
+}
+.box-admin .box-item .red-number {
+    background-color: #ff0000; 
+    padding: 2px ;
+    color: #ffffff;
+    border-radius: 50%; 
+    width: 18px; 
+    height: 18px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    position: absolute;
+    bottom: 17px;
+    left: 10px;
+}
+.box-acc-admin {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.box-acc-admin  img{
+    border-radius: 50%; 
+    width: 50px;
+}
+.box-acc-admin p{
+    font-size: 14px;
+}
+.main-content{
+    padding: 0px 50px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+
+}
+.container-thongke{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.container-thongke .box-content{
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 12px gray;
+    width: 250px;
+    height: 130px ;
+    position: relative;
+
+}
+.container-thongke .box-content .money{
+    font-size: 25px;
+}
+.icon-name{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: rgb(87, 87, 87);
+}
+.icon-name i{
+    font-size: 24px;
+}
+.tile-box{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.phantram{
+    display: flex;
+    align-items: center;
+    color: green;
+}
+#edit-box-content{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+.title-date{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* margin-top: 20px; */
+    padding: 20px;
+}
+.title-date .title{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.box-date{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    color: rgb(41, 41, 41);
+}
+.container-orders{
+    margin-top: 30px;
+}
+.dot-stt{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.dot-stt .dot{
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #ff0000;
+}
+.box-order table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.box-order th, .box-order td {
+    padding: 10px;
+    text-align: left;
+}
+
+.box-order th {
+    background-color: #f2f2f2;
+}
+.box-order table tbody tr td i{
+    margin-left: 20px;
+}
+.box-order table tbody tr {
+    border-radius:5px ;
+    border-bottom: 1px solid #ddd;
+    
+}
+.container-orders h3{
+    width: 30%;
+    padding: 10px;
+    border-bottom: 2px solid #ddd;
+}
+.box-order a p{
+    margin-top: 20px;
+    text-align: center;
+}
+.container-chart {
+    margin: 0 auto;
+    margin-top: 30px;
+    max-width: 70%; 
+}
+
+.container-chart h3 {
+    text-align: center;
+    font-weight: 500;
+}
+
+#canvas {
+    width: 100%;
+}
+
+.footer-admin{
+    padding: 20px;
+    background-color: #ddd;
+}
+.title-footer{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.title-footer h4{
+    font-weight: 500;
+}
+.title-footer i{
+    font-size: 20px;
+}

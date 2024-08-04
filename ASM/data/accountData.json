@@ -1,0 +1,36 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "image": null,
+      "username": "admin",
+      "pass": "admin123",
+      "email": "admin123@gmail.com",
+      "role": 0
+    },
+    {
+      "id": 2,
+      "image": null,
+      "username": "rubysayhi",
+      "pass": "123456",
+      "email": "tranhongngoc05@gmail.com",
+      "role": 1
+    },
+    {
+      "id": 5,
+      "image": null,
+      "username": "rubysayhi",
+      "pass": "123456",
+      "email": "tranhongngoc05@gmail.com",
+      "role": 1
+    },
+    {
+      "id": 6,
+      "image": null,
+      "username": "ngoc ne",
+      "pass": "123456",
+      "email": "tranhongngoc09@gmail.com",
+      "role": 1
+    }
+  ]
+}

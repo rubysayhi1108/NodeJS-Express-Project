@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DASBOARD</title>
+    <link rel="shortcut icon" href="/image/logo/favicon.svg" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/css/user-ad.css">
+</head>
+<body>
+    <main>
+        <div class="main-container">
+            <%-include('menu-admin.ejs')%>
+            <div class="right-container">
+                <div class="content-top">
+                    <h3>WelcomeBack, Admin <i style="font-size: 25px;" class="fa-solid fa-hand-peace"></i></h3>
+                    <div class="content-top-right">
+                        <div class="box-search">
+                            <i  class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" placeholder="Search...">
+                        </div>
+                        <div class="box-admin">
+                           <div class="box-item">
+                                <i class="fa-solid fa-bell"></i>
+                                <div class="red-number">
+                                    <p>0</p>
+                                </div>
+                           </div>
+                           <div class="box-item">
+                                <i class="fa-solid fa-comment-dots"></i>
+                                <div class="red-number">
+                                    <p>0</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-acc-admin">
+                            <img src="../image/avatar.png" alt="">
+                            
+                            <p>User name</p>
+                            <i class="fa-solid fa-caret-down"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="title-date">
+                    <div class="title">
+                        <p>Admin</p>/<h3>Orders</h3>
+                    </div>
+                    <div class="box-date">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <p>25/01/2024</p>
+                        <p>-</p>
+                        <p>1/02/2024</p>
+                    </div>
+                </div>
+                <div class="main-content">
+                   <div class="container-Allpro">
+                        <div class="content-top-product">
+                            <div class="box-content">
+                                <p>Tong don hang:  100</p>
+                            </div>
+                            <!-- <div class="box-search">
+                                <i  class="fa-solid fa-magnifying-glass"></i>
+                                <input type="text" placeholder="Search...">
+                            </div> -->
+                        </div>
+                        <div class="container-orders">
+                            <div class="box-order">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>User</th>
+                                            <th>ID</th>
+                                            <th>Username</th>
+                                            <th>Email</th>
+                                            <th>SDT</th>
+                                            <th>Password</th>
+                                            <th>Create Date</th>
+                                            <th>Role</th>
+                                            <th></th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><img  class="img-user" src="../../public/asset/img/avatar.png" alt=""></td>
+                                            <td>#01</td>
+                                            <td>Rubysayhi</td>
+                                            <td>rubysayhi123@gmail.com</td>
+                                            <td>099999999</td>
+                                            <td>12345678</td>
+                                            <td>26/01/2024</td>
+                                            <td>User</td>
+                                            <td>
+                                                <div class="edit-dele">
+                                                    <i style="color: gray;" class="fa-regular fa-pen-to-square"></i>
+                                                    <i style="color: red;" class="fa-solid fa-delete-left"></i>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><img  class="img-user" src="../../public/asset/img/avatar.png" alt=""></td>
+                                            <td>#01</td>
+                                            <td>Rubysayhi</td>
+                                            <td>rubysayhi123@gmail.com</td>
+                                            <td>099999999</td>
+                                            <td>12345678</td>
+                                            <td>26/01/2024</td>
+                                            <td>User</td>
+                                            <td>
+                                                <div class="edit-dele">
+                                                    <i style="color: gray;" class="fa-regular fa-pen-to-square"></i>
+                                                    <i style="color: red;" class="fa-solid fa-delete-left"></i>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><img  class="img-user" src="../../public/asset/img/avatar.png" alt=""></td>
+                                            <td>#01</td>
+                                            <td>Rubysayhi</td>
+                                            <td>rubysayhi123@gmail.com</td>
+                                            <td>099999999</td>
+                                            <td>12345678</td>
+                                            <td>26/01/2024</td>
+                                            <td>User</td>
+                                            <td>
+                                                <div class="edit-dele">
+                                                    <i style="color: gray;" class="fa-regular fa-pen-to-square"></i>
+                                                    <i style="color: red;" class="fa-solid fa-delete-left"></i>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><img  class="img-user" src="../../public/asset/img/avatar.png" alt=""></td>
+                                            <td>#01</td>
+                                            <td>Rubysayhi</td>
+                                            <td>rubysayhi123@gmail.com</td>
+                                            <td>099999999</td>
+                                            <td>12345678</td>
+                                            <td>26/01/2024</td>
+                                            <td>User</td>
+                                            <td>
+                                                <div class="edit-dele">
+                                                    <i style="color: gray;" class="fa-regular fa-pen-to-square"></i>
+                                                    <i style="color: red;" class="fa-solid fa-delete-left"></i>
+                                                </div>
+                                            </td>
+                                        </tr> 
+                                        <tr>
+                                            <td><img  class="img-user" src="../../public/asset/img/avatar.png" alt=""></td>
+                                            <td>#01</td>
+                                            <td>Rubysayhi</td>
+                                            <td>rubysayhi123@gmail.com</td>
+                                            <td>099999999</td>
+                                            <td>12345678</td>
+                                            <td>26/01/2024</td>
+                                            <td>User</td>
+                                            <td>
+                                                <div class="edit-dele">
+                                                    <i style="color: gray;" class="fa-regular fa-pen-to-square"></i>
+                                                    <i style="color: red;" class="fa-solid fa-delete-left"></i>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="ptrang">
+                                    <div class="pagination" style="display: flex;">
+                                        <div class="prev"><i class="fa-solid fa-chevron-left"></i></div>
+                                        <div class="pagination-dots">
+                                            <div class="dot">1</div>
+                                            <div class="dot">2</div>
+                                            <div class="dot">3</div>
+                                            <div class="more-dots">...</div>
+                                            <div class="dot">10</div>
+                                        </div>
+                                        <div class="next"><i class="fa-solid fa-chevron-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                   </div>
+                </div>
+                <div class="footer-admin">
+                    <div class="title-footer">
+                        <i class="fa-solid fa-copyright"></i>
+                        <h4>RUBY-WATCH admin</h4>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Pop-up thêm danh muc -->
+            <div class="popup" id="addPopup">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup()"><i style="color: red;" class="fa-regular fa-circle-xmark"></i></span>
+                    <h2 style="text-align: center;">Add User</h2>
+                    <form>
+                        <label>ID</label>
+                        <input type="number" id="userId">
+                        <label>Username</label>
+                        <input type="text" id="userName">
+                        <label >Birthday</label>
+                        <input type="date" >
+                        <label>Email</label>
+                        <input type="email" >
+                        <label>Password</label>
+                        <input type="text">
+                        <label>Role</label>
+                        <div class="role">
+                            <div class="box-role">
+                                <input type="radio">
+                                <p>User</p>
+                            </div>
+                            <div class="box-role">
+                                <input type="radio">
+                                <p>Admin</p>
+                            </div>
+                        </div>
+                        <label >Image</label>
+                        <div class="file-upload">
+                            <label class="custom-file-upload">
+                                <input type="file">
+                                <img src="../../public/asset/img/image-upload.png" width="100px" alt="">
+                            </label>
+                        </div>
+                        <div class="btn"><button type="submit">Cap nhat</button></div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+<script src="/js/main-admin.js"></script>
+</html>

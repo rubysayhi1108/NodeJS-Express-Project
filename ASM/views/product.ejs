@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DASBOARD</title>
+    <link rel="shortcut icon" href="/image/logo/favicon.svg" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/css/product-ad.css">
+    <link rel="stylesheet" href="/css/popup.css">
+</head>
+<body>
+    <main>
+        <div class="main-container">
+            <%-include('menu-admin.ejs')%>
+            <div class="right-container">
+                <div class="content-top">
+                    <h3>WelcomeBack, Admin <i style="font-size: 25px;" class="fa-solid fa-hand-peace"></i></h3>
+                    <div class="content-top-right">
+                        <!-- <div class="box-search">
+                            <i  class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" placeholder="Search.">
+                        </div> -->
+                        <div class="box-admin">
+                           <div class="box-item">
+                                <i class="fa-solid fa-bell"></i>
+                                <div class="red-number">
+                                    <p>0</p>
+                                </div>
+                           </div>
+                           <div class="box-item">
+                                <i class="fa-solid fa-comment-dots"></i>
+                                <div class="red-number">
+                                    <p>0</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-acc-admin">
+                            <!-- <img src="../image/avatar.png" alt=""> -->
+                            
+                            <p>User name</p>
+                            <i class="fa-solid fa-caret-down"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="title-date">
+                    <div class="title">
+                        <p>Admin</p>/<h3>Products</h3>
+                    </div>
+                    <div class="box-date">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <p>25/01/2024</p>
+                        <p>-</p>
+                        <p>1/02/2024</p>
+                    </div>
+                </div>
+                <div class="main-content">
+                   <div class="container-Allpro">
+                        <div class="content-top-product">
+                            <div id="countProduct" class="box-content">
+                                <p>Tổng sản phẩm:  <%= totalQty %></p>
+                            </div>
+                            <div class="box-search">
+                                <i  class="fa-solid fa-magnifying-glass"></i>
+                                <input type="text" placeholder="Search...">
+                            </div>
+                            <div class="btn">
+                                <button id="btn-add-popup"  class="btn-them">Thêm sản phẩm</button>
+                            </div>
+                        </div>
+                        <div class="box-flex">
+                            <div class="container-showPro">
+                                <div  class="box-product">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Product</th>
+                                                <th>Name</th>
+                                                <th>Price</th>
+                                                <th>Sale (%)</th>
+                                                <th>Quantity</th>
+                                                <th>Category</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="containerPro">
+                                            <% product.forEach(function(product) { %>
+                                                <tr>
+                                                    <td id="productId"><%= product.id %></td>
+                                                    <td><img src="/<%= product.image %>" ></td>
+                                                    <td><%= product.name %></td>
+                                                    <td><%= product.price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' }) %></td>
+                                                    <td><%= product.sale %></td>
+                                                    <td><%= product.qty %></td>
+                                                    <td><%= categoryName %></td>
+                                                    <td>
+                                                        <div class="edit-dele">
+                                                            <form method="POST" action="/show-edit" id="formEditProduct">
+                                                                <input type="hidden" name="productId" id="productId" value="<%= product.id %>">
+                                                                <button style="outline: none; border: none;"  type="submit">
+                                                                    <i  id="btn-edit"  data-product-id="<%= product.id %>" style="color: gray; font-size: 20px;" class="fa-regular fa-pen-to-square"></i>
+                                                                </button>
+                                                            </form>
+                                                            <form action="/deleteProduct" method="post" id="formDele">
+                                                                <input  type="hidden" name="idProduct" value="<%= product.id %>">
+                                                                <button style="outline: none; border: none;" class="btn-delete"  type="submit">
+                                                                    <i id="btn-delete"  style="color: red;  font-size: 18px;" class="fa-solid fa-delete-left"></i>
+                                                                </button>
+                                                            </form>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            <% }); %>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- <div class="ptrang">
+                                    <div class="pagination" style="display: flex;">
+                                        <div class="prev"><i class="fa-solid fa-chevron-left"></i></div>
+                                        <div class="pagination-dots">
+                                            <div class="dot">1</div>
+                                            <div class="dot">2</div>
+                                            <div class="dot">3</div>
+                                            <div class="more-dots">...</div>
+                                            <div class="dot">10</div>
+                                        </div>
+                                        <div class="next"><i class="fa-solid fa-chevron-right"></i></div>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                   </div>
+                </div>
+                <div class="footer-admin">
+                    <div class="title-footer">
+                        <i class="fa-solid fa-copyright"></i>
+                        <h4>RUBY-WATCH admin</h4>
+                    </div>
+                </div>
+            </div>
+               <!-- Pop-up thêm sản phẩm -->
+            <div class="popup" id="addPopup">
+                <div class="popup-content">
+                    <span class="close" id="btn-close-popup"><i style="color: red;" class="fa-regular fa-circle-xmark"></i></span>
+                    <h2 style="text-align: center;">Add Product</h2>
+                    <!-- Form thêm sản phẩm -->
+                    <p id="error" style="color: red;"></p>
+                    <form method="POST" action="/addTour" id="formAddProduct" enctype="multipart/form-data">
+                        <div class="box-upload-content">
+                            <label for="productName">Name</label>
+                            <input type="text" name="nameAdd" id="productName"  >
+                            <label for="productPrice">Price</label>
+                            <input type="number" name="priceAdd" id="productPrice" >
+                            <label for="productQty">Quantity</label>
+                            <input type="number" name="qtyAdd" id="productQty">
+                            <label for="productSale">Sale(%)</label>
+                            <input type="number" name="saleAdd" id="productSale">
+                            <label for="productCategory">Category</label>
+                            <select id="productCategory" name="cateAdd" class="productCategory">
+                                <%for(let i of category){%>
+                                    <option value="<%=i.id%>"><%=i.name%></option>
+                                <%}%>
+                            </select>
+                        </div>
+                        <div class="box-upload-img">
+                            <label for="productImage">Image</label>
+                            <div class="file-upload">
+                                <label class="custom-file-upload">
+                                    <input type="file" name="imageAdd" id="productImage" onchange="previewImage()">
+                                    <img id="preview" src="/img/image-upload.png" width="100px" alt="">
+                                </label>
+                            </div>                            
+
+                        </div>
+                        <div class="btn"><button  class="button" id="btn-add" type="submit">Thêm</button></div>
+                    </form>
+                </div>
+            </div>
+            <div class="popup" id="editPopup">
+                <div class="popup-content">
+                    <span class="popup__btn--close close" id="closeEdit"><i style="color: red;" class="fa-regular fa-circle-xmark"></i></span>
+                    <h2 style="text-align: center;">Edit Product</h2>
+                    <!-- Form thêm sản phẩm -->
+                    <p id="error" style="color: red;"></p>
+                    <form  method="POST" action="/edit-product" enctype="multipart/form-data" id="formEditProduct" class="formEditProduct2">
+                        <div class="box-upload-content">
+                          
+                            <label for="productName">Name</label>
+                            <input type="text" name="nameUpdate" value="" id="productName">
+                            <label for="productPrice">Price</label>
+                            <input type="number" name="priceUpdate" value="" id="productPrice" >
+                            <label for="productQty">Quantity</label>
+                            <input type="number" name="quantityProduct" id="productQty">
+                            <label for="productSale">Sale(%)</label>
+                            <input type="number" name="saleUpdate" value="" id="productSale">
+                            <label for="productCategory">Category</label>
+                            <!-- hidden -->
+                            <input type="hidden" name="idProductOld" value="">
+                            <input type="hidden" name="imageProductOld" value="">
+                            <input type="hidden" name="nameProductOld" value="">
+                            <select id="productEditCategory" name="idCategory" class="productCategory">
+                                <%for(let i of category){%>
+                                    <option value="<%=i.id%>"><%=i.name%></option>
+                                <%}%>
+                            </select>
+                        </div>
+                        <div class="box-upload-img">
+                            <label for="productImage">Image</label>
+                            <div class="file-upload">
+                                <label class="custom-file-upload">
+                                    <input type="file" name="imageUpdate" id="productImageEdit" onchange="previewImage()">
+                                    <img id="preview" class="imagePreview" src="" width="100px" alt="">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="btn"><button id="btn-update" class="button" type="submit" onclick="">Cập nhật</button>
+                    </form>
+                </div>
+            </div>
+            <div id="confirmation-popup" class="confirmation-popup">
+                <div class="overlay" id="overlay"></div>
+                <div class="popup-content" id="popup-confirm">
+                    <h3 style="text-align: center;">Bạn chắc chắn muốn xóa sản phẩm?</h3>
+                    <div class="icon-flex">
+                        <i class="fa-regular fa-trash-can"></i>
+                    </div>
+                    <div class="button-flex">
+                        <button class="btn-huy"><i class="fa-solid fa-xmark"></i></button>
+                        <button class="btn-ok"><i class="fa-solid fa-check"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+<script type="module" src="/js/product-ad.js"></script>
+<script src="/js/main-admin.js"></script>
+</html>

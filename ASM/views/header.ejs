@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/img/logo/favicon.svg" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+</head>
+<body>
+    <header>
+        <div class="logo-header">
+           <a href="/"> <img src="/img/logo/logo.svg" alt=""></a>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="/home">Trang chủ</a></li>
+                <li class="dropdown">
+                    <a href="/shop/0">Cửa hàng <i class="fa-solid fa-caret-down"></i></a>
+                    <ul id="menuCate" class="dropdown-menu">
+                        <% if (Array.isArray(category)) { %>
+                            <% for (let e of category) { %>
+                                <li><a href="/shop/<%= e.id %>"> Đồng hồ <%= e.name %></a></li>
+                            <% } %>
+                        <% } %>                        
+                        
+                    </ul>
+                </li>
+                <li><a href="/about">Giới thiệu</a></li>
+                <li><a href="/contact">Liên hệ</a></li>
+            </ul>
+        </div>
+        <div class="menu-icon">
+            <li><a class="search" href=""><i class="fa-solid fa-magnifying-glass"></i></a></li>
+            <li><a class="cart"><i class="fa-solid fa-cart-shopping"></i><div class="qty-cart"><p id="cartQuantity" style="font-size: 11px; font-weight: 600;">0</p></div></li>
+            <li><a class="user"  style="gap: 5px; " href="/login"><i class="fa-solid fa-user"></i></a></li>
+        </div>
+    </header>

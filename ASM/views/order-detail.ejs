@@ -1,0 +1,79 @@
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="/css/order-ad.css">
+<link rel="stylesheet" href="/css/order.css">   
+<div class="popup" id="orderPopup">
+    <div class="popup-content">
+        <span class="close" onclick="document.getElementById('orderPopup').style.display='none'"><i style="color: red;" class="fa-regular fa-circle-xmark"></i></span>
+        <div class="order-details">
+            <h2>Chi tiết đơn hàng</h2>
+        <div class="box-thongtin">
+            <div class="box-1">
+                <p><strong>ID:</strong> ${orderData.id}</p>
+                <p><strong>Ngày đặt:</strong> ${orderData.orderDate} </p>
+                <p><strong>PTTT:</strong> ${pttt}</p>
+                <p><strong>Trạng thái:</strong>
+                    <select class="btn-confirm" name="" id="orderStatus">
+                        <option value="${order.stt}"> ${sttOrder}</option>
+                        <option value="2">Chờ giao hàng</option>
+                        <option value="3">Đang giao hàng</option>
+                        <option value="4">Đã giao hàng</option>
+                        <option value="5">Hoàn / trả hàng</option>
+                    </select>
+                </p>
+            </div>
+            <div class="box-2">
+                <p><strong>Tên người nhận:</strong> ${orderData.hoTen}</p>
+                <p><strong>SĐT:</strong> ${orderData.soDienThoai}</p>
+                <p><strong>Email:</strong> ${orderData.email}</p>
+                <p><strong>Địa chỉ:</strong> ${orderData.diaChiCuThe}, ${orderData.phuongXa}, ${orderData.quanHuyen}, ${orderData.tinhThanhPho}</p>
+            </div>
+        </div>
+        <h3>Sản phẩm đơn hàng:</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Tên</th>
+                    <th>Giá</th>
+                    <th>Số lượng</th>
+                    <th>Thành tiền </th>
+                </tr>
+            </thead>
+            <tbody>
+                ${orderData.orderProduct.map((product, index) => {
+                    const thanhTien = product.price * product.quantity;
+                    return `
+                        <tr>
+                            <td>${index + 1}</td>
+                            <td>${product.name}</td>
+                            <td>${formatMoney(product.price)}</td>
+                            <td>${product.quantity}</td>
+                            <td>${formatMoney(thanhTien)}</td> <!-- Sử dụng giá trị đã tính -->
+                        </tr>
+                    `;
+                }).join('')}
+            </tbody>
+        </table>
+        <div class="box-flex">
+            <div class="box-total">
+            <h3>Tổng tiền:</h3>
+                
+                <div class="box-item">
+                    <h4>Tạm tính:</h4>
+                    <p>${formatMoney(orderData.orderProduct.reduce((total, product) => total + product.thanhTien, 0))}</p>
+                </div>
+                <div class="box-item">
+                    <h4>Phí vận chuyển:</h4>
+                    <p>${shipping}</p>
+                </div>
+                
+                <div class="box-item">
+                    <h3>TỔNG:</h3>
+                    <h3>${formatMoney(orderData.orderProduct.reduce((total, product) => total + product.thanhTien, 0) + Number(orderData.shipping))}</h3>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+<script src="/js/order.js"></script>    

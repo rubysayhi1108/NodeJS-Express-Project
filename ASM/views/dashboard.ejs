@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DASBOARD</title>
+    <link rel="shortcut icon" href="/img/logo/favicon.svg" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+    <main>
+        <div class="main-container">
+            <%-include('menu-admin.ejs')%>
+            <div class="right-container">
+                <div class="content-top">
+                    <h3>WelcomeBack, Admin <i style="font-size: 25px;" class="fa-solid fa-hand-peace"></i></h3>
+                    <div class="content-top-right">
+                        <div class="box-admin">
+                           <div class="box-item">
+                                <i class="fa-solid fa-bell"></i>
+                                <div class="red-number">
+                                    <p>0</p>
+                                </div>
+                           </div>
+                           <div class="box-item">
+                                <i class="fa-solid fa-comment-dots"></i>
+                                <div class="red-number">
+                                    <p>0</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-acc-admin">
+                            <img src="/image/avatar.png" alt="">
+                            
+                            <p>User name</p>
+                            <i class="fa-solid fa-caret-down"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="title-date">
+                    <div class="title">
+                        <p>Admin</p>/<h3>Dashboard</h3>
+                    </div>
+                    <div class="box-date">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <p>25/01/2024</p>
+                        <p>-</p>
+                        <p>1/02/2024</p>
+                    </div>
+                </div>
+                <div class="main-content">
+                    <div class="container-thongke">
+                        <div class="box-content">
+                            <div class="icon-name">
+                                <i class="fa-solid fa-chart-line"></i>
+                                <h3>Sales Revenue</h3>
+                            </div>
+                            <p class="money">1000000000 VND</p>
+                            <div class="tile-box">
+                               <div class="phantram">
+                                    <i class="fa-solid fa-arrow-up"></i>
+                                    <p> +99%</p></div>
+                                <p style="color: rgb(147, 147, 147); font-size: 14px;">1 month</p>
+                            </div>
+                            <!-- <i id="edit-box-content" class="fa-solid fa-ellipsis-vertical"></i> -->
+                        </div>
+                        <div class="box-content">
+                            <div class="icon-name">
+                                <i class="fa-solid fa-sack-dollar"></i>
+                                <h3>Profit</h3>
+                            </div>
+                            <p class="money">1000000000 VND</p>
+                            <div class="tile-box">
+                               <div class="phantram">
+                                    <i class="fa-solid fa-arrow-up"></i>
+                                    <p> +99%</p></div>
+                                <p style="color: rgb(147, 147, 147); font-size: 14px;">1 month</p>
+                            </div>
+                            <!-- <i id="edit-box-content" class="fa-solid fa-ellipsis-vertical"></i> -->
+                        </div>
+                        <div class="box-content">
+                            <div class="icon-name">
+                                <i class="fa-solid fa-file-invoice"></i>
+                                <h3>Orders</h3>
+                            </div>
+                            <p class="money">10000</p>
+                            <div class="tile-box">
+                               <div class="phantram">
+                                    <i class="fa-solid fa-arrow-up"></i>
+                                    <p> +99%</p></div>
+                                <p style="color: rgb(147, 147, 147); font-size: 14px;">1 month</p>
+                            </div>
+                            <!-- <i id="edit-box-content" class="fa-solid fa-ellipsis-vertical"></i> -->
+                        </div>
+                        <div class="box-content">
+                            <div class="icon-name">
+                                <i class="fa-solid fa-users"></i>
+                                <h3>New Customers</h3>
+                            </div>
+                            <p class="money">100000</p>
+                            <div class="tile-box">
+                               <div class="phantram">
+                                    <i class="fa-solid fa-arrow-up"></i>
+                                    <p> +99%</p></div>
+                                <p style="color: rgb(147, 147, 147); font-size: 14px;">1 month</p>
+                            </div>
+                            <!-- <i id="edit-box-content" class="fa-solid fa-ellipsis-vertical"></i> -->
+                        </div>
+                    </div>
+                    <div class="container-chart">
+                       <!-- <h3>Luot truy cap gan day</h3> -->
+                        <canvas id="canvas"></canvas>
+                    </div>
+                    <div class="container-orders">
+                        <h3>Đơn hàng gần đây</h3>
+                        <div class="box-order">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>OrderID</th>
+                                        <th>Date</th>
+                                        <th>Customer name</th>
+                                        <th>Status</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>#01</td>
+                                        <td>25/01/2024</td>
+                                        <td>Rubysayhi</td>
+                                        <td class="dot-stt">
+                                            <div class="dot"></div>
+                                            Cancel
+                                        </td>
+                                        <td>1000000 VND</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#01</td>
+                                        <td>25/01/2024</td>
+                                        <td>Rubysayhi</td>
+                                        <td class="dot-stt">
+                                            <div class="dot"></div>
+                                            Cancel
+                                        </td>
+                                        <td>1000000 VND</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#01</td>
+                                        <td>25/01/2024</td>
+                                        <td>Rubysayhi</td>
+                                        <td class="dot-stt">
+                                            <div class="dot"></div>
+                                            Cancel
+                                        </td>
+                                        <td>1000000 VND</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#01</td>
+                                        <td>25/01/2024</td>
+                                        <td>Rubysayhi</td>
+                                        <td class="dot-stt">
+                                            <div class="dot"></div>
+                                            Cancel
+                                        </td>
+                                        <td>1000000 VND</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#01</td>
+                                        <td>25/01/2024</td>
+                                        <td>Rubysayhi</td>
+                                        <td class="dot-stt">
+                                            <div class="dot"></div>
+                                            Cancel
+                                        </td>
+                                        <td>1000000 VND</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <a href="/layout/order.html"><p>Xem them >></p></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-admin">
+                    <div class="title-footer">
+                        <i class="fa-solid fa-copyright"></i>
+                        <h4>RUBY-WATCH admin</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+<script src="/js/chart.js"></script>
+<script src="/js/main.js"></script>
+</html>

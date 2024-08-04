@@ -1,0 +1,71 @@
+.box-cart{
+    width: 500px;
+    padding: 20px;
+    position: fixed;
+    top: 100px;
+    z-index: 30;
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    right: -100%;
+    transition: all 0.3s ease-in-out;
+}
+.box-cart .box-sp-cart{
+    max-height: 300px;
+    overflow-y: scroll;
+}
+/* .blur-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    filter: blur(50px);
+    z-index: -1;
+} */
+.box-cart table {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+.box-cart table tbody tr{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 5px;
+    border-bottom: 0.5px solid #ddd;
+}
+.box-cart table tbody tr td img{
+    height: 80px;
+}
+.name-pro{
+    width: 80px;
+    word-wrap: break-word;
+}
+.box-btn{
+    display: flex;
+    justify-content: center;
+}
+.box-btn button{
+    outline: none;
+    border: 0.3px solid #ddd;
+    font-size: 18px;
+    font-family: 'Rokkitt', serif;
+    width: 200px;
+    height: 40px;
+    color: #FFCC00;
+    background-color: #000000;
+    border-radius: 5px;
+}
+.box-btn button:hover{
+    color:  #000000 ;
+    background-color: #FFCC00;
+}
+.tongtien{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}

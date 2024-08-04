@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DASBOARD</title>
+    <link rel="shortcut icon" href="/image/logo/favicon.svg" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/css/catgories-ad.css">
+</head>
+<body>
+    <main>
+        <div class="main-container">
+            <%-include('menu-admin.ejs')%>
+            <div class="right-container">
+                <div class="content-top">
+                    <h3>WelcomeBack, Admin <i style="font-size: 25px;" class="fa-solid fa-hand-peace"></i></h3>
+                    <div class="content-top-right">
+                        <!-- <div class="box-search">
+                            <i  class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" placeholder="Search...">
+                        </div> -->
+                        <div class="box-admin">
+                           <div class="box-item">
+                                <i class="fa-solid fa-bell"></i>
+                                <div class="red-number">
+                                    <p>0</p>
+                                </div>
+                           </div>
+                           <div class="box-item">
+                                <i class="fa-solid fa-comment-dots"></i>
+                                <div class="red-number">
+                                    <p>0</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-acc-admin">
+                            <!-- <img src="../image/avatar.png" alt=""> -->
+                            
+                            <p>User name</p>
+                            <i class="fa-solid fa-caret-down"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="title-date">
+                    <div class="title">
+                        <p>Admin</p>/<h3>Categories</h3>
+                    </div>
+                    <div class="box-date">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <p>25/01/2024</p>
+                        <p>-</p>
+                        <p>1/02/2024</p>
+                    </div>
+                </div>
+                <div class="main-content">
+                   <div class="container-Allpro">
+                        <div class="content-top-product">
+                            <div id="countCategory" class="box-content">
+                                <p>Tổng danh mục:  <%= totalQty %></p>
+                            </div>
+                            <div class="box-search">
+                                <i  class="fa-solid fa-magnifying-glass"></i>
+                                <input type="text" placeholder="Search...">
+                            </div>
+                            <div class="btn">
+                                <button onclick="openPopup()" class="btn-them">Thêm danh mục</button>
+                            </div>
+                        </div>
+                        <div class="container-showPro">
+                            <div class="box-product">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Category</th>
+                                            <th>Name</th>
+                                            <th>Description</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="containerCate">
+                                        <tr>
+                                            <% cate.forEach(function(e) { %>
+                                                <tr>
+                                                    <td id="idCate"><%= e.id %></td>
+                                                    <td><img src="/<%= e.image %>" ></td>
+                                                    <td><%= e.name %></td>
+                                                    <td class="mota"><%= e.mota %></td>
+                                                    <td>
+                                                        <div class="edit-dele">
+                                                            <form method="POST" action="/show-editCate" id="formEditCategory">
+                                                                <input type="hidden" name="idCate" id="idCate" value="<%= e.id %>">
+                                                                <button type="submit" style="outline: none; border: none;">
+                                                                    <i id="btn-edit" data-product-id="<%= e.id %>" style="color: gray; font-size: 20px;" class="fa-regular fa-pen-to-square"></i>
+                                                                </button>
+                                                            </form>                                                            
+                                                            <form action="/deleteCategory" method="post" id="formDele">
+                                                                <input type="hidden" name="idCate" id="idCate" value="<%= e.id %>">
+                                                                <button style="outline: none; border: none;" class="btn-delete"  type="submit">
+                                                                    <i id="btn-delete"  style="color: red;font-size: 18px;" class="fa-solid fa-delete-left"></i>
+                                                                </button>
+                                                            </form>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            <% }); %>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- <div class="ptrang">
+                                <div class="pagination" style="display: flex;">
+                                    <div class="prev"><i class="fa-solid fa-chevron-left"></i></div>
+                                    <div class="pagination-dots">
+                                        <div class="dot">1</div>
+                                        <div class="dot">2</div>
+                                        <div class="dot">3</div>
+                                        <div class="more-dots">...</div>
+                                        <div class="dot">10</div>
+                                    </div>
+                                    <div class="next"><i class="fa-solid fa-chevron-right"></i></div>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="footer-admin">
+                    <div class="title-footer">
+                        <i class="fa-solid fa-copyright"></i>
+                        <h4>RUBY-WATCH admin</h4>
+                    </div>
+                </div> -->
+            </div>
+               <!-- Pop-up thêm danh muc -->
+            <div class="popup" id="addPopup">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup()"><i style="color: red;" class="fa-regular fa-circle-xmark"></i></span>
+                    <h2 style="text-align: center;">Add Category</h2>
+                    <!-- Form thêm danh muc -->
+                    <p id="error" style="color: red; font-size: 15px;"></p>
+                    <form method="POST" action="/add-category" id="formAddCategory" enctype="multipart/form-data">
+                        <label for="cateName">Name</label>
+                        <input type="text" id="cateName" name="nameAdd"  >
+                        <label for="catePrice">Description</label>
+                        <textarea name="motaAdd" id="cateMota" cols="30" rows="10"></textarea>
+                        <label for="cateImage">Image</label>
+                        <div class="file-upload">
+                            <label class="custom-file-upload">
+                                <input type="file" name="imageAdd" id="productImage" onchange="previewImage()">
+                                <img id="preview" class="imageFormUpdate" src="/img/image-upload.png" width="100px" alt="">
+                            </label>
+                        </div>     
+                        <div class="btn"><button  class="button" id="btn-add" type="submit">Thêm</button></div>
+                        
+                    </form>
+                </div>
+            </div>
+            <div class="popup" id="editPopup">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup()"><i style="color: red;" class="fa-regular fa-circle-xmark"></i></span>
+                    <h2 style="text-align: center;">Edit Category</h2>
+                    <!-- Form thêm danh muc -->
+                    <p id="error" style="color: red; font-size: 15px;"></p>
+                    <form  method="POST" action="/edit-category" enctype="multipart/form-data" id="formEditCategory" class="formEditCategory2">
+                        <label for="cateName">Name</label>
+                        <input type="text" id="cateName" name="nameEdit"  >
+                        <label for="catePrice">Description</label>
+                        <textarea name="motaEdit" id="cateMota" cols="30" rows="10"></textarea>
+                        <label for="cateImage">Image</label>
+                        <div class="file-upload">
+                            <label class="custom-file-upload">
+                                <input type="file" name="imageEdit" id="productImage" onchange="previewImage()">
+                                <img id="preview" class="imageFormUpdate2" src="/img/image-upload.png" width="100px" alt="">
+                            </label>
+                        </div> 
+                            
+                        <input type="hidden" name="idCategoryOld" value="">
+                        <input type="hidden" name="imageCategoryOld" value="">
+                        <input type="hidden" name="nameCategoryOld" value="">
+                        <div class="btn"><button  class="button" id="btn-add" type="submit">Thêm</button></div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+<script src="/js/main-admin.js"></script>
+<script src="/js/categories-ad.js"></script>
+</html>

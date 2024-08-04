@@ -1,0 +1,108 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="shortcut icon" href="../public/img/logo/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../public/css/user-general.css">
+</head>
+<body>
+    <header>
+        <div class="logo-header">
+           <a href="../view/index.html"> <img src="../public/img/logo/logo.svg" alt=""></a>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="../view/index.html">Trang chủ</a></li>
+                <li class="dropdown">
+                    <a href="../view/shop.html">Cửa hàng <i class="fa-solid fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Đồng hồ Seiko</a></li>
+                        <li><a href="#">Đồng hồ Seiko</a></li>
+                        <li><a href="#">Đồng hồ Seiko</a></li>
+                        <li><a href="#">Đồng hồ Seiko</a></li>
+                        <li><a href="#">Đồng hồ Seiko</a></li>
+                        <li><a href="#">Đồng hồ Seiko</a></li>
+                    </ul>
+                </li>
+                <li><a href="">Giới thiệu</a></li>
+                <li><a href="">Liên hệ</a></li>
+            </ul>
+        </div>
+        <div class="menu-icon">
+            <li><a class="search" href=""><i class="fa-solid fa-magnifying-glass"></i></a></li>
+            <li><a class="cart" href="../view/cart.html"><i class="fa-solid fa-cart-shopping"></i><div class="qty-cart"><p style="font-size: 11px;">0</p></div></a></li>
+            <li><a class="user"  style="gap: 5px;" href="../view/login.html"><p>Đăng nhập</p><i class="fa-solid fa-user"></i></a></li>
+        </div>
+    </header>
+    <main>
+        <div class="container-profile">
+            <div class="left">
+                <div class="top-profile">
+                    <div class="box-item">
+                        <img src="../public/img/avatar.png"  alt="">
+                        <div class="box-content">
+                            <h3>Username</h3> 
+                        </div>
+                    </div>
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li><a href=""><i class="fa-solid fa-house-user"></i>Tổng quan</a></li>
+                        <li><a href=""><i class="fa-regular fa-address-card"></i>Địa chỉ</a></li>
+                        <li><a href=""><i class="fa-solid fa-lock"></i>Đổi mật khẩu</a></li>
+                        <li><a href=""><i class="fa-solid fa-clock-rotate-left"></i>Lịch sử đơn hàng</a></li>
+                        <li><a href=""><i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="right">
+                <div class="title-profile">
+                    <div class="box-item">
+                        <i class="fa-solid fa-house-user"></i>
+                        <h3>Tổng quan</h3>
+                    </div>
+                </div>
+                
+                <div class="box-profile">
+                    <div class="box-left">
+                        <div class="profile-content">
+                            <h3>Tên đăng nhập</h3>
+                            <div class="inp"><input type="text" value="ruby"></div>
+                        </div>
+                        <div class="profile-content">
+                            <h3>Họ và tên</h3>
+                            <div class="inp"><input type="text" value="tran thi hong ngoc"></div>
+                        </div>
+                        <div class="profile-content">
+                            <h3>Email</h3>
+                            <div class="inp"><input type="email" value="ruby@gmail.com"></div>
+                        </div>
+                        <div class="profile-content">
+                            <h3>Số điện thoại</h3>
+                            <div class="inp"> <input type="text" value="ruby@gmail.com"></div>
+                        </div>
+                        <div class="profile-content">
+                            <h3>Ngày sinh</h3>
+                            <div class="inp"> <input type="date" value="ruby@gmail.com"></div>
+                        </div>
+                        <div class="box-btn">
+                            <button class="btn-update">Cập nhật</button>
+                        </div>
+                    </div>
+                    <div class="box-right">
+                        <div class="box-upload-img">
+                            <img src="../public/img/avatar.png" alt="">
+                            <p>Chọn ảnh đại diện</p>
+                            <input type="file" style="display: none;">
+                            <button class="btn-up-img">Chọn ảnh</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

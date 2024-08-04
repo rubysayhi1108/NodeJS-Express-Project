@@ -1,0 +1,250 @@
+{
+  "newProduct": [
+    {
+      "id": 39,
+      "name": "Casio-01",
+      "price": 10000000,
+      "image": "imageAdd-1712742390025.webp",
+      "view": 0,
+      "sale": 0,
+      "qty": 123,
+      "purchases": 0,
+      "iddm": 2
+    },
+    {
+      "id": 35,
+      "name": "Logines-10",
+      "price": 20000000,
+      "image": "imageAdd-1712648272079.webp",
+      "view": 0,
+      "sale": 10,
+      "qty": 120,
+      "purchases": 0,
+      "iddm": 1
+    },
+    {
+      "id": 34,
+      "name": "Logines-09",
+      "price": 23000000,
+      "image": "imageAdd-1712648232920.webp",
+      "view": 0,
+      "sale": 0,
+      "qty": 123,
+      "purchases": 0,
+      "iddm": 1
+    },
+    {
+      "id": 33,
+      "name": "Logines-07",
+      "price": 40000000,
+      "image": "imageAdd-1712648082765.webp",
+      "view": 0,
+      "sale": 0,
+      "qty": 23,
+      "purchases": 0,
+      "iddm": 1
+    },
+    {
+      "id": 32,
+      "name": "Logines-05",
+      "price": 35000000,
+      "image": "imageAdd-1712647980695.webp",
+      "view": 0,
+      "sale": 10,
+      "qty": 120,
+      "purchases": 0,
+      "iddm": 1
+    },
+    {
+      "id": 31,
+      "name": "Logines-04",
+      "price": 32000000,
+      "image": "imageAdd-1712647892493.webp",
+      "view": 0,
+      "sale": 0,
+      "qty": 30,
+      "purchases": 0,
+      "iddm": 1
+    },
+    {
+      "id": 30,
+      "name": "Logines-03",
+      "price": 30000000,
+      "image": "imageAdd-1712647863457.webp",
+      "view": 0,
+      "sale": 10,
+      "qty": 20,
+      "purchases": 0,
+      "iddm": 1
+    }
+  ],
+  "topSellerProduct": [
+    {
+      "id": 29,
+      "name": "Logines-02",
+      "price": 12000000,
+      "image": "imageAdd-1712647826223.webp",
+      "view": 0,
+      "sale": 20,
+      "qty": 100,
+      "purchases": 0,
+      "iddm": 1
+    }
+  ],
+  "bestSellerProduct": [
+    {
+      "id": 29,
+      "name": "Logines-02",
+      "price": 12000000,
+      "image": "imageAdd-1712647826223.webp",
+      "view": 0,
+      "sale": 20,
+      "qty": 100,
+      "purchases": 0,
+      "iddm": 1
+    },
+    {
+      "id": 30,
+      "name": "Logines-03",
+      "price": 30000000,
+      "image": "imageAdd-1712647863457.webp",
+      "view": 0,
+      "sale": 10,
+      "qty": 20,
+      "purchases": 0,
+      "iddm": 1
+    },
+    {
+      "id": 31,
+      "name": "Logines-04",
+      "price": 32000000,
+      "image": "imageAdd-1712647892493.webp",
+      "view": 0,
+      "sale": 0,
+      "qty": 30,
+      "purchases": 0,
+      "iddm": 1
+    },
+    {
+      "id": 32,
+      "name": "Logines-05",
+      "price": 35000000,
+      "image": "imageAdd-1712647980695.webp",
+      "view": 0,
+      "sale": 10,
+      "qty": 120,
+      "purchases": 0,
+      "iddm": 1
+    },
+    {
+      "id": 33,
+      "name": "Logines-07",
+      "price": 40000000,
+      "image": "imageAdd-1712648082765.webp",
+      "view": 0,
+      "sale": 0,
+      "qty": 23,
+      "purchases": 0,
+      "iddm": 1
+    },
+    {
+      "id": 34,
+      "name": "Logines-09",
+      "price": 23000000,
+      "image": "imageAdd-1712648232920.webp",
+      "view": 0,
+      "sale": 0,
+      "qty": 123,
+      "purchases": 0,
+      "iddm": 1
+    },
+    {
+      "id": 35,
+      "name": "Logines-10",
+      "price": 20000000,
+      "image": "imageAdd-1712648272079.webp",
+      "view": 0,
+      "sale": 10,
+      "qty": 120,
+      "purchases": 0,
+      "iddm": 1
+    },
+    {
+      "id": 39,
+      "name": "Casio-01",
+      "price": 10000000,
+      "image": "imageAdd-1712742390025.webp",
+      "view": 0,
+      "sale": 0,
+      "qty": 123,
+      "purchases": 0,
+      "iddm": 2
+    }
+  ],
+  "saleProduct": [
+    {
+      "id": 29,
+      "name": "Logines-02",
+      "price": 12000000,
+      "image": "imageAdd-1712647826223.webp",
+      "view": 0,
+      "sale": 20,
+      "qty": 100,
+      "purchases": 0,
+      "iddm": 1
+    },
+    {
+      "id": 30,
+      "name": "Logines-03",
+      "price": 30000000,
+      "image": "imageAdd-1712647863457.webp",
+      "view": 0,
+      "sale": 10,
+      "qty": 20,
+      "purchases": 0,
+      "iddm": 1
+    },
+    {
+      "id": 32,
+      "name": "Logines-05",
+      "price": 35000000,
+      "image": "imageAdd-1712647980695.webp",
+      "view": 0,
+      "sale": 10,
+      "qty": 120,
+      "purchases": 0,
+      "iddm": 1
+    },
+    {
+      "id": 35,
+      "name": "Logines-10",
+      "price": 20000000,
+      "image": "imageAdd-1712648272079.webp",
+      "view": 0,
+      "sale": 10,
+      "qty": 120,
+      "purchases": 0,
+      "iddm": 1
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "name": "Logines",
+      "image": "imageEdit-1712821829427.webp",
+      "mota": "Longines là thương hiệu đồng hồ Thụy Sỹ ra đời vào năm 1832.Được sáng lập bởi Auguste Agassiz.Có những dòng sản phẩm tiêu biểu: “Elegance, Watchmaking Tradition, Avigation, Diving, Performance”."
+    },
+    {
+      "id": 2,
+      "name": "Logines44444",
+      "image": "imageEdit-1712821261765.webp",
+      "mota": "Longines là thương hiệu đồng hồ Thụy Sỹ ra đời vào năm 1832.Được sáng lập bởi Auguste Agassiz.Có những dòng sản phẩm tiêu biểu: “Elegance, Watchmaking Tradition, Avigation, Diving, Performance”."
+    },
+    {
+      "id": 5,
+      "name": "Orient",
+      "image": "imageEdit-1712821936702.webp",
+      "mota": "Orient là thương hiệu đồng hồ Thụy Sỹ ra đời vào năm 1832.Được sáng lập bởi Auguste Agassiz.Có những dòng sản phẩm tiêu biểu: “Elegance, Watchmaking Tradition, Avigation, Diving, Performance”."
+    }
+  ]
+}
